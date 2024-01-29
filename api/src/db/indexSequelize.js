@@ -2,10 +2,10 @@ const { Sequelize, DataTypes } = require('sequelize');
 
 const sequelize = new Sequelize(
     'testSequelize2',
-    'root',
-    'TL2k20',
+    process.env.DB_USERNAME || 'root',
+    process.env.DB_PASSWORD || '',
     {
-        host: 'localhost',
+        host: process.env.DB_HOST || 'localhost',
         dialect: 'mysql',
         logging: false
     }

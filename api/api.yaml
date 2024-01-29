@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api
+spec:
+  selector:
+    matchLabels:
+      app: api
+  template:
+    metadata:
+      labels:
+        app: api
+    spec:
+      imagePullSecrets:
+      - name: docker-credentials
+      containers:
+      - name: api
+        image: briyankessel/api_k8s_project
+        ports:
+        - containerPort: 3003
+        envFrom:
+        - configMapRef:
+            name: api-config
+        resources:
+          limits:
+            cpu: "1"
+            memory: "512Mi"
+          requests:
+            cpu: "0.5"
+            memory: "256Mi"
+
+

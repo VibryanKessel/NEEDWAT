@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: site
+spec:
+  selector:
+    matchLabels:
+      app: site
+  template:
+    metadata:
+      labels:
+        app: site
+    spec:
+      imagePullSecrets:
+      - name: docker-credentials
+      containers:
+      - name: site
+        image: briyankessel/site_k8s_project
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 4000
+        envFrom:
+        - configMapRef:
+            name: frontend-config
+     
