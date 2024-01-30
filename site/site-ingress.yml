@@ -5,15 +5,21 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
-  ingressClassName: nginx-needwat
   rules:
-  - host: site.needwat.com
-  - http:
+  - host: site.needwat.com 
+    http:
       paths:
-      - path: /
-        pathType: Prefix
-        backend:
+      - backend:
           service:
             name: site-service
             port:
-              number: 80
+              number: 19006
+        path: /
+        pathType: Prefix
+      - backend:
+          service:
+            name: api-service
+            port:
+              number: 3003
+        path: /api
+        pathType: Prefix

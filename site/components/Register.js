@@ -11,7 +11,6 @@ import axios from "axios";
 import TestServer from "./TestServer";
 import HomeView from "../views/HomeView";
 import { useNavigation } from "@react-navigation/native";
-import apiUrl from "../utils/apiUrl";
 
 const Register = () => {
   const [prenom, onChangePrenom] = useState("");
@@ -23,7 +22,7 @@ const Register = () => {
   let navigation = useNavigation();
 
   const getRest = async () => {
-    const responce = await axios.post(`${apiUrl}/addUsers/`, {
+    const responce = await axios.post("/addUsers/", {
       nom: nom,
       prenom: prenom,
       email: email,

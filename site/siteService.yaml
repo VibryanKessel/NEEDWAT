@@ -6,6 +6,6 @@ spec:
   selector:
     app: site
   ports:
-  - port: 80
+  - port: 19006
     targetPort: 19006
   type: NodePort

@@ -9,7 +9,6 @@ import axios from "axios";
 import tw from "twrnc";
 import HomeView from "../views/HomeView";
 import Register from "./Register";
-import apiUrl from "../utils/apiUrl";
 
 const Login = () => {
   const navigation = useNavigation();
@@ -17,7 +16,7 @@ const Login = () => {
   const [password, setPassword] = React.useState("");
 
   const logUser = async () => {
-    const response = await axios.post(`${apiUrl}/api/users/login`, {
+    const response = await axios.post("/api/users/login", {
       email: email,
       password: password,
     });

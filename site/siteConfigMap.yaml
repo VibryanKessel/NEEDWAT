@@ -3,6 +3,6 @@ kind: ConfigMap
 metadata:
   name: frontend-config
 data:
-  API_URL: http://api-service
+  API_URL: site.needwat.com
   APP_ENV: production
 

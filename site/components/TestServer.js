@@ -7,7 +7,7 @@ const TestServer = () => {
   const [res, setRes] = useState("Etat initial");
 
   /*  const getRest = async () => {
-      const responce = await axios.post(`${apiUrl}/addUsers/`, 
+      const responce = await axios.post("/addUsers/", 
           {name: "test", age: "12"},
           )
           alert(responce.data)

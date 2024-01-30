@@ -4,5 +4,5 @@ RUN npm i -g expo-cli
 COPY package.json package.json
 RUN npm i 
 COPY . .
-EXPOSE 4000
+EXPOSE 19006
 CMD ["npx","expo","start","-w"]

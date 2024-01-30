@@ -4,6 +4,7 @@ metadata:
   name: api-config
 data:
   DB_HOST: db-service
+  SITE_URL: site.needwat.com
   DB_USERNAME: root
   DB_PASSWORD: ""
   SERVER_PORT: "3003"

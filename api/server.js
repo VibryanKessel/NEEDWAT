@@ -7,10 +7,16 @@ const cors = require("cors");
 
 const app = express();
 const port = process.env.SERVER_PORT || 3000;
+const corsOptions = {
+//   origin: process.env.SITE_URL,  
+  methods: 'GET,POST',
+  credentials: true,  
+  optionsSuccessStatus: 204,  
+};
 
 app
     .use(favicon(__dirname + '/favicon.ico'))
-    .use(cors())
+    .use(cors(corsOptions))
     .use(morgan('dev'))
     .use(bodyParser.json())
 
